@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>"FELIZ 2024" </h2>
+        <h1>NO DUDES EN COLOCAR TUS  HUELLAS </h1>
+      
+     <h3>...ÉXITOS PROMO... </h3>
+
+    </header>
+<script>
+function createHeart(x, y) {
+    let body = document.querySelector('body');
+    let heart = document.createElement('span');
+    heart.style.left = x + 'px';
+    heart.style.top = y + 'px';
+
+    let size = Math.random() * 80;
+    heart.style.width = 20 + size + 'px';
+    heart.style.height = 20 + size + 'px';
+    let transformValue = Math.random() * 80;
+    heart.style.transform = 'rotate(' + transformValue + 'deg)';
+    body.appendChild(heart);
+
+    setTimeout(function () {
+        heart.remove();
+    }, 1000);
+}
+
+document.addEventListener('mousemove', function (e) {
+    let x = e.clientX;
+    let y = e.clientY;
+    createHeart(x, y);
+});
+
+document.addEventListener('touchmove', function (e) {
+    e.preventDefault(); // Evita el comportamiento predeterminado del desplazamiento táctil
+    let touch = e.touches[0];
+    let x = touch.clientX;
+    let y = touch.clientY;
+    createHeart(x, y);
+});
+</script>
+
+</body>
+</html>

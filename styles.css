@@ -1,0 +1,122 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow: hidden; /* Evita el desbordamiento horizontal y vertical */
+}
+
+h4 {
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #f68428;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
+    overflow: hidden; /* Evita el desbordamiento horizontal y vertical */
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: 'Arial', sans-serif;
+    color: #f68428;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 5.5em;
+    margin-top: 10px;
+    color: #ccc; /* Añadí un color de texto para mejorar la visibilidad */
+}
+
+
+h3{
+    font-size: 2.1em;
+    margin-top: 10px;
+    color: #ccc; /* Añadí un color de texto para mejorar la visibilidad */
+}
+span {
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(Birrete.png);
+    background-size: cover;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    animation: rotate360 5s linear infinite, scaleUp 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20%, 80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: translate(0) rotate(0deg);
+    }
+    100% {
+        transform: translate(50vw) rotate(360deg);
+    }
+}
+
+@keyframes scaleUp {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}
